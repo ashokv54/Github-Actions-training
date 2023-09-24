@@ -16,7 +16,7 @@ jobs:
         - name: echo hello
           run: echo "hello 👋"
   second-job:
-    runs-on : Windows
+    runs-on : win-agent-CI-01
     steps:
       - name: echo hello
         run: |
