@@ -6,8 +6,8 @@ on:
 jobs:
   info:
     runs-on: self-hosted
-      steps: 
-        - name: github output
-          run: echo "${{ toJson(github) }}"
+    steps: 
+      - name: github output
+        run: echo "${{ toJson(github) }}"
 
     
