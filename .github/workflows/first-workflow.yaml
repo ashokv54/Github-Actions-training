@@ -14,9 +14,9 @@ jobs:
       runs-on : self-hosted
       steps:
         - name: echo hello
-          run: echo hello 👋
+          run: echo "hello 👋"
   second-job:
-    runs-on : windows
+    runs-on : Windows
     steps:
       - name: echo hello
         run: |
