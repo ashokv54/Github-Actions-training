@@ -13,5 +13,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: checkout files
-        uses: actions/checkout@v2
-    
+        uses: actions/checkout@v4
+      - name: npm build step
+        run:  npm run build  
+      - name: npm tests
+        run:  npm run test   
