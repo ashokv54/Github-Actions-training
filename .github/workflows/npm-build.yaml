@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: checkout files
         uses: actions/checkout@v4
+      - name: npm install dependencies
+        run: npm install
       - name: npm build step
         run:  npm run build  
       - name: npm tests
