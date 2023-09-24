@@ -19,4 +19,10 @@ jobs:
       - name: npm build step
         run:  npm run build  
       - name: npm tests
-        run:  npm run test   
+        run:  npm run test
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Deployment to webapp
+        run: echo 'deploying app 🚀'
