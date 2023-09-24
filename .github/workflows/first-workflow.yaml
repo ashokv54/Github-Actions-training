@@ -1,0 +1,22 @@
+name: first workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+
+  first-job:
+      runs-on : ubuntu-latest
+      steps:
+        - name: echo hello
+          run: echo hello 👋
+  second-job:
+    runs-on : ubuntu-latest
+    steps:
+      - name: echo hello
+        run: echo hello 👋
