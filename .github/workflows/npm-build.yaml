@@ -1,0 +1,17 @@
+name: npm ci workflow
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: checkout files
+        uses: actions/checkout@v2
+    
