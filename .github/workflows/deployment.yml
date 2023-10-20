@@ -13,9 +13,9 @@ jobs:
               with: 
                 node-version: 18
             - name: npm build
-              run: npm build
+              run: npm run build
             - name: npm test
-              run: npm test
+              run: npm run test
             - name: upload artifacts
               uses: actions/upload-artifact@v3
               with: 
