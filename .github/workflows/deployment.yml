@@ -22,7 +22,7 @@ jobs:
               uses: actions/upload-artifact@v3
               with: 
                 name: my-artifiact
-                path : /
+                path : dist
     release:
         needs: build
         runs-on: ubuntu-latest
