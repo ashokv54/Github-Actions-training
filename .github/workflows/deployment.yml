@@ -12,6 +12,11 @@ jobs:
               uses: actions/setup-node@v3
               with: 
                 node-version: 18
+            - name: Cache dependencies
+              uses: actions/cache@v3
+              with:
+                path: ~/.npm
+                key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
             - name: install dep
               run: npm install
             - name: npm build
@@ -31,5 +36,7 @@ jobs:
               uses: actions/download-artifact@v3
               with: 
                 name: my-artifact
+            - name: list files
+              run: ls -l
             - name: deploying to webapp
               run: echo deploying to Webapp
