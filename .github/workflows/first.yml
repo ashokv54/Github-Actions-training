@@ -9,6 +9,8 @@ jobs:
         steps:
             - name: hello world
               run: echo hello
+            - name: github context output
+              run: echo ${{ toJson(github)}}
     deploy:
         needs: build
         runs-on: ubuntu-latest
