@@ -22,6 +22,7 @@ jobs:
                 name: my-artifiact
                 path : /
     release:
+        needs: build
         runs-on: ubuntu-latest
         steps:
             - name: Download artifacts
