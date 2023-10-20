@@ -10,7 +10,8 @@ jobs:
             - name: hello world
               run: echo hello
     deploy:
-        runs-on: ubuntu-lates
+        needs: build
+        runs-on: ubuntu-latest
         steps:
             - name: hello 2
               run: |
