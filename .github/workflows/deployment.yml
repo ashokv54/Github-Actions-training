@@ -21,7 +21,7 @@ jobs:
             - name: upload artifacts
               uses: actions/upload-artifact@v3
               with: 
-                name: my-artifiact
+                name: my-artifact
                 path : dist
     release:
         needs: build
