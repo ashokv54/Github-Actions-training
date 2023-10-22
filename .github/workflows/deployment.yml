@@ -8,7 +8,6 @@ on:
 
 jobs:
     build: 
-        environment: test
         env:
           VAR1: ${{vars.VAR1}}
           SECRET1: ${{secrets.SECRET1}}
