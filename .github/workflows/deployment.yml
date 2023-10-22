@@ -13,6 +13,10 @@ jobs:
          matrix:
           node-version: [12, 14, 16]
           os-type: [windows-latest, ubuntu-latest]
+          include:
+            - node-version : 18
+          exclude:
+            - os-type: windows-latest
         environment: test
         env:
           VAR1: ${{vars.VAR1}}
