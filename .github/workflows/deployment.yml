@@ -8,6 +8,10 @@ on:
 
 jobs:
     build: 
+        environment: test
+        env:
+          VAR1: ${{vars.VAR1}}
+          SECRET1: ${{secrets.SECRET1}}
         runs-on : ubuntu-latest
         outputs:
             script-file: ${{ steps.publish.outputs.script-file}}
@@ -18,15 +22,10 @@ jobs:
               uses: actions/setup-node@v3
               with: 
                 node-version: 18
-            - name: get dirrrrrr
-              run : npm config get cache
-            - name: Get npm cache directory
-              id: npm-cache-dir
-              shell: bash
-              run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
-
-            - name: print out 
-              run : echo ${{ steps.npm-cache-dir.outputs.dir }}
+            - name: print varaiable1 and secret1
+              run: 
+                echo $VAR1
+                echo $SECRET1
 
             - name: Cache dependencies
               uses: actions/cache@v3
