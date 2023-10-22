@@ -8,11 +8,16 @@ on:
 
 jobs:
     build: 
+        continue-on-error: true
+        strategy: 
+         matrix:
+          node-version: [12, 14, 16]
+          os-type: [windows-latest, ubuntu-latest]
         environment: test
         env:
           VAR1: ${{vars.VAR1}}
           SECRET1: ${{secrets.SECRET1}}
-        runs-on : ubuntu-latest
+        runs-on : ${{matrix.os-type}}
         outputs:
             script-file: ${{ steps.publish.outputs.script-file}}
         steps:
@@ -21,7 +26,7 @@ jobs:
             - name: node js install
               uses: actions/setup-node@v3
               with: 
-                node-version: 18
+                node-version: ${{matrix.node-version}}
             - name: print varaiable1 and secret1
               run: 
                 echo $VAR1
