@@ -8,6 +8,7 @@ on:
 
 jobs:
     build: 
+        runs-on : ${{matrix.os-type}}
         continue-on-error: true
         strategy: 
          matrix:
@@ -21,7 +22,7 @@ jobs:
         env:
           VAR1: ${{vars.VAR1}}
           SECRET1: ${{secrets.SECRET1}}
-        runs-on : ${{matrix.os-type}}
+        
         outputs:
             script-file: ${{ steps.publish.outputs.script-file}}
         steps:
